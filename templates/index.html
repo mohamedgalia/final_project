@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bitcoin Price</title>
+</head>
+<body style="background-color:#000000;" >
+<center> <img src="/static/images.jpeg"> </center>
+<br>
+<center> <font size="10" color="#f2f2f2">Bitcoin Price </font> </center>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<table>
+    <tr>
+        <td> <img src="/static/d.png">/td>
+        <td>
+        <p id="price" style="color:#f2f2f2; font-size:200%">Here will be price|price</p>
+
+        <script>
+            var price = document.getElementById("price");
+
+            setInterval(() => {
+                fetch("{{ url_for('update_price') }}")
+                .then(response => {
+                        response.text().then(t => {price.innerHTML = t})});}, 1000);
+        </script>
+        </td>
+
+        <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+        <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+        <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+        <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+        <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+
+
+        <td> <font size="10" color="#f2f2f2"> AVG </font> <br> <font size="3" color="#f2f2f2"> last 1 min </font></td>
+        <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+        <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+
+        <td>
+        <p id="aprice" style="color:#f2f2f2; font-size:200%"></p>
+
+        <script>
+            var aprice = document.getElementById("aprice");
+
+            setInterval(() => {
+                fetch("{{ url_for('update_price_avg') }}")
+                .then(response => {
+                        response.text().then(t => {aprice.innerHTML = t})});}, 1000);
+        </script>
+        </td>
+    </tr>
+</table>
+
+
+</body>
+</html>
