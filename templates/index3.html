@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> <center> Auti </center> </h1>
+<center>
+<table>
+    <tr style="background-color: gray ;">
+        <td><center>Time</center></td>
+        <td><center>Amount</center></td>
+        <td><center>Currency</center></td>
+        <td><center>Target_Currency</center></td>
+        <td><center>Rate</center></td>
+        <td><center>Conversion</center></td>
+    </tr>
+    {% for i in info %}
+        <tr style="background-color: gray ;">
+            <td><center> {{ i[0] }} </center></td>
+            <td><center> {{ i[1] }} </center></td>
+            <td><center> {{ i[2] }} </center></td>
+            <td><center> {{ i[3] }} </center></td>
+            <td><center> {{ i[4] }} </center></td>
+            <td><center> {{ i[5] }} </center></td>
+
+        </tr>
+    {% endfor %}
+</table>
+</center>
+</body>
+</html>
