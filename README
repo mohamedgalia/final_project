@@ -1,12 +1,12 @@
-**currency swap**
+currency swap
 it is a project that support currency swap  
   
-# how to run:  
+how to run:  
 set the access_key and secret_key of youe aws acount in variables file
 go to main.tf file
 run "terraform apply" in the terminal
 
-# using:
+using:
 python  
 flask  
 docker  
